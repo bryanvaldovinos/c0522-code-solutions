@@ -6,23 +6,16 @@ form {
 h3 {
   text-align: center;
   color: rgb(236 93 87);
-  font-family: "Brandon Grotesque";
-  font-style: normal;
-  font-weight: 500;
-  src: url("BrandonGrotesque-Medium.woff2") format("woff2");
+  font-family: "Brandon Grotesque", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }
 
 label {
   padding-left: 13px;
-  font-family: "Brandon Grotesque";
+  font-family: "Brandon Grotesque", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 80%;
-  letter-spacing: 0.025em;
-  word-spacing: 0.075em;
-  src: url("BrandonGrotesque-Regular.woff2") format("woff2");
   text-transform: uppercase;
 }
 
@@ -34,13 +27,9 @@ input {
   border-radius: 7px;
   border-width: 0.1em;
   border-color: rgb(172 176 175); /* rgb(250 249 249); */
-  font-family: AtlasGrotesk;
+  font-family: AtlasGrotesk, sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 130%;
-  line-height: 1.4em;
-  color: rgb(250 249 249);
-  src: url("AtlasGrotesk-Light-Web.woff2") format("woff2");
 }
 
 select {
@@ -52,11 +41,7 @@ select {
   border-radius: 5px;
   border-width: 0.1em;
   border-color: rgb(172 176 175);
-  font-family: "Brandon Grotesque";
-  font-style: normal;
-  font-weight: 100;
-  font-size: 130%;
-  src: url("BrandonGrotesque-Regular.woff2") format("woff2");
+  font-family: "Brandon Grotesque", sans-serif;
 }
 
 div.button {
@@ -67,11 +52,7 @@ button {
   color: white;
   padding: 8px 25px;
   background-color: rgb(236 93 87);
-  font-family: "Brandon Grotesque";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 105%;
-  src: url("BrandonGrotesque-Medium.woff2") format("woff2");
+  font-family: "Brandon Grotesque", sans-serif;
   text-transform: uppercase;
   border-radius: 25px;
   border-width: 0;
