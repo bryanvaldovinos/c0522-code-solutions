@@ -37,11 +37,11 @@ h1 {
 }
 
 img {
-  background-color: white;
   background-size: auto;
-  border-radius: 50%;
-  width: 40%;
-  height: 40%;
+  width: 65px;
+  height: 65px;
+  background-color: white;
+  align-items: center;
 }
 
 .clear {
@@ -61,4 +61,13 @@ p {
   line-height: 1.4rem;
   width: 85%;
   margin: auto;
+}
+
+.imagecenter {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 50%;
+  padding: 28px;
 }
