@@ -7,7 +7,7 @@
   display: flex;
 }
 
-.grayfont {
+.gray-font {
   color: #a1a1a1;
 }
 
@@ -58,28 +58,28 @@ button {
   width: 460px;
 }
 
-.row2 {
+.font-karla {
   font-family: Karla, sans-serif;
 }
 
-.shrinktext {
+.shrink-text {
   line-height: 1.25rem;
   font-size: 70%;
 }
 
-.alignleft {
+.align-left {
   text-align: left;
 }
 
-.spacebelow {
+.space-below {
   margin-bottom: 10px;
 }
 
-.smallertitle {
+.smaller-title {
   font-size: 80%;
 }
 
-.marginbottom {
+.margin-bottom {
   margin-bottom: 50px;
 }
 
@@ -88,11 +88,11 @@ button {
   bottom: 30px;
 }
 
-.sixtysix {
+.col-two-thirds {
   width: 66%;
 }
 
-.thirtythree {
+.col-one-third {
   width: 33%;
 }
 
@@ -101,18 +101,18 @@ img {
   height: 100px;
 }
 
-.spaceabove {
+.space-above {
   margin-top: 50px;
 }
 
-.spaceleft {
+.space-left {
   margin-left: 40px;
 }
 
-.spaceright {
+.space-right {
   margin-right: 40px;
 }
 
-.margintop {
+.margin-top {
   margin-top: 30px;
 }
