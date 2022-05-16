@@ -11,6 +11,6 @@ var unknown = null;
 console.log('value of unknown:', unknown);
 console.log('typeof unknown:', typeof unknown);
 
-var never =
+var never;
 console.log('value of never:', never);
 console.log('typeof never:', typeof never);
