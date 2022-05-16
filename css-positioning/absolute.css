@@ -5,21 +5,20 @@
   background-size: cover;
 
   /* your code here */
+  position: relative;
 }
 
 .meme > img {
   width: 100%;
-  position: relative;
 }
 
 .emoji {
   font-size: 3rem;
-  position: absolute;
-  top: 20px;
-  bottom: 500px;
-  left: 240px;
 
   /* your code here */
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .joke {
@@ -33,12 +32,8 @@
 
   /* your code here */
   position: absolute;
-  top: 165px;
-  right: 975px;
   font-weight: bold;
-  bottom: 1750px;
-  font-stretch: narrow;
-  left: 15px;
+  bottom: 0;
 }
 
 .overlay {
@@ -46,8 +41,6 @@
 
   /* your code here */
   position: absolute;
-  bottom: 175px;
-  top: 8px;
   width: 300px;
   height: 300px;
 }
