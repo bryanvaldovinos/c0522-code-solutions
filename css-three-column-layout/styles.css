@@ -23,11 +23,11 @@ h1 {
   padding-bottom: 15px;
 }
 
-.columnonethird {
+.column-one-third {
   width: calc(100%/3);
 }
 
-.threerows {
+.three-rows {
   width: 100%;
 }
 
@@ -57,13 +57,13 @@ p {
   margin-top: 5px;
 }
 
-.textspacing {
+.text-spacing {
   line-height: 1.4rem;
   width: 85%;
   margin: auto;
 }
 
-.imagecenter {
+.image-center {
   display: flex;
   background-color: white;
   flex-direction: column;
