@@ -1,0 +1,203 @@
+.container {
+  max-width: 100%;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col-30 {
+  width: 30%;
+}
+
+.col-35 {
+  width: 35%;
+}
+
+.col-25 {
+  width: 25%;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.avenir {
+  font-family: Avenir, sans-serif;
+}
+
+.tiempos {
+  font-family: "Tiempos Headline", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.white-text {
+  color: white;
+}
+
+.navy-background {
+  background-color: #124265;
+}
+
+.gray-text {
+  color: #757575;
+}
+
+.button-size {
+  padding: 15px 45px;
+  border-radius: 3px;
+  font-size: 1.25rem;
+  border-width: 0;
+  font-weight: thin;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.margin-left {
+  margin-left: 75px;
+}
+
+.margin-right {
+  margin-right: 75px;
+}
+
+.margin-top {
+  margin-top: 0;
+}
+
+.col-70 {
+  width: 70%;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.margin-left-2 {
+  margin-left: 20px;
+}
+
+.nav-bar {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 3.5rem;
+  list-style: none;
+}
+
+.button-size-2 {
+  border-width: 0;
+  border-radius: 3px;
+  padding: 12px 20px;
+  font-size: medium;
+}
+
+.flex-right {
+  justify-content: flex-end;
+}
+
+.canvas-logo-shrink {
+  width: 150px;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.border-bottom {
+  border: solid lightgray;
+  border-width: 0 0 1px;
+}
+
+.hero-bg {
+  background-image:
+    linear-gradient(transparent, rgb(23 23 24 / 70.2%)),
+    url("images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 75px;
+  padding: 50px;
+}
+
+.line-height {
+  line-height: 2rem;
+}
+
+.top-and-bottom {
+  margin-top: 100px;
+  margin-bottom: 75px;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+.gray-background {
+  background-color: #525351;
+}
+
+.padding-botop {
+  padding: 6rem 0;
+}
+
+.padding-botop-2 {
+  padding: 2rem 0;
+}
+
+.img-shrink {
+  width: 150px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.light-gray-back {
+  background-color: #fafafa;
+}
+
+.col {
+  width: 100%;
+}
+
+.padding-left {
+  padding-left: 1.5rem;
+}
+
+.padding-botop-3 {
+  padding: 1rem 0;
+}
+
+.padding-botop-4 {
+  padding: 4rem 0;
+}
+
+.bigger-text {
+  font-size: 1.25rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+.margin-botop {
+  margin: 75px;
+}
+
+.padding-botop-5 {
+  padding: 1rem 0 3.5rem;
+}
