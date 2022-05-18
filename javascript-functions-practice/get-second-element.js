@@ -1,5 +1,5 @@
 /* exported getSecondElement */
-function getSecondElement([pikachu, squirtle, bulbasaur, charmander]) {
-  var secondElement = [pikachu, squirtle, bulbasaur, charmander];
+function getSecondElement(array) {
+  var secondElement = array;
   return secondElement[1];
 }

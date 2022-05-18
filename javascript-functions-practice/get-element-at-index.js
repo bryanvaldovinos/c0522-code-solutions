@@ -1,5 +1,5 @@
 /* exported getElementAtIndex */
-function getElementAtIndex([a, b, c, d], i) {
-  var array = [a, b, c, d];
-  return array[i];
+function getElementAtIndex(array, i) {
+  var a = array;
+  return a[i];
 }

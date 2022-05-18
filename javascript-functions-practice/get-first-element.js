@@ -1,5 +1,5 @@
 /* exported getFirstElement */
-function getFirstElement([a, b, c, d]) {
-  var firstElement = [a, b, c, d];
+function getFirstElement(array) {
+  var firstElement = array;
   return firstElement[0];
 }
