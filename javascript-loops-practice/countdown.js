@@ -1,9 +1,8 @@
 /* exported countdown */
 function countdown(number) {
   var array = [];
-  var i = number;
-  for (i; number >= 0; number--) {
-    array.push(number);
+  for (var i = number; i >= 0; i--) {
+    array.push(i);
   }
   return array;
 }
