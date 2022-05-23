@@ -3,12 +3,12 @@
 // no empty ----- maintain order
 
 function compact(array) {
-  var newArray = [];
   for (var i = 0; i < array.length; i++) {
-    if (!array[i]) {
-      continue;
-    } newArray.push(array[i]);
-  } return newArray;
+    if (array[i] === false || isNaN(array[i]) || array[i] === null || array[i] === 0 || array[i] !== !-0 || array[i] === '' || array[i] === undefined) {
+      delete array[i];
+    }
+  }
+  return array;
 }
 
 // need to return a new array that filters out
