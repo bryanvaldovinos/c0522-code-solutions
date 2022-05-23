@@ -6,3 +6,12 @@ function initial(array) {
   }
   return newArray;
 }
+
+// need to return new array
+// create empty array
+// then must return initial array except last element
+// will need to run through elements so use loop
+// how can i access all but the last?
+// array length - 1 would leave out the last one
+// code block for loop should push all elements into new array
+// return new array
