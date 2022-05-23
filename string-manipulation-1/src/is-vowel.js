@@ -7,3 +7,12 @@ function isVowel(char) {
     return isVowel;
   }
 }
+
+// return boolean true or false to check if char is vowel
+// need to account for cap and lowercase
+// its a single char so check for that with if?
+// can prob include indexof method to check char in a string
+// strings are array like
+// so assign vowels uppercase and lowercase as string to variable
+// then index of that variable and compare if greater than or equal to 0
+// assign that to a new variable and return
