@@ -4,7 +4,8 @@ function getKeys(object) {
 
   for (var property in object) {
     keys.push(property);
-  } return keys;
+  }
+  return keys;
 }
 
 // - have to access object
