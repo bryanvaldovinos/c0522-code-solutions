@@ -1,16 +1,13 @@
 /* exported isVowel */
 function isVowel(char) {
-  if (char.length === 1) {
-    var vowels = 'aeiouAEIOU';
-    var isVowel = vowels.indexOf(char) >= 0;
-    return isVowel;
+  if (char === 'a' || char === 'A' || char === 'e' || char === 'E' || char === 'i' || char === 'I' || char === 'o' || char === 'O' || char === 'u' || char === 'U') {
+    return true;
   }
+  return false;
 }
+
 // return boolean true or false to check if char is vowel
 // need to account for cap and lowercase
-// its a single char so check for that with if?
-// can prob include indexof method to check char in a string
-// strings are array like
-// so assign vowels uppercase and lowercase as string to variable
-// then index of that variable and compare if greater than or equal to 0
-// assign that to a new variable and return
+// if statement that checks each vowel, lower and upper using ||
+// return true if any of those vowel
+// false if not one of those vowel
