@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+.light-bg {
+  background-color: #fef9f1;
+  transition: 0.3s;
+}
+
+.black-bg {
+  background-color: #111;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.column {
+  flex-direction: column;
+  box-shadow: 300px white;
+}
+
+.dark-button {
+  background-color: #252525;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 0.5rem #202020;
+}
+
+.light-button {
+  background-color: #faea84;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 1rem #faeb8b;
+}
