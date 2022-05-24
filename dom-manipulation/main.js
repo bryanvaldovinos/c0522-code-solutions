@@ -21,4 +21,3 @@ function click(event) {
 }
 
 hotButton.addEventListener('click', click);
-clickCount.addEventListener('click', click);
