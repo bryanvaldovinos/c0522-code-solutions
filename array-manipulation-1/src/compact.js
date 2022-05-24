@@ -3,20 +3,20 @@
 // no empty ----- maintain order
 
 function compact(array) {
-  for (var i = 0; i < array.length; i++) {
-    if (array[i] === false || isNaN(array[i]) || array[i] === null || array[i] === 0 || array[i] !== !-0 || array[i] === '' || array[i] === undefined) {
-      delete array[i];
+  var newArray = [];
+  array.forEach(i => {
+    if (i) {
+      newArray.push(i);
     }
-  }
-  return array;
+  });
+  return newArray;
 }
 
 // need to return a new array that filters out
 // falsy values
 // a loop is needed to check for every element in original array
 // is there a way to skip over array element/ not include?
-// continue will skip over iteration
-// not a falsy is true... so if true then continue
-// not truthy is false.. so dont continue
-//  ---> push  truthy array at index to new array
+// using forEach method to test if element is truthy
+// if element of array is truthy then push to newArray
+// if element of array is not truthy then push will not occur
 // return new array
