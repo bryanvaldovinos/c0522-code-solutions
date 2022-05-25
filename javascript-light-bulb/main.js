@@ -1,14 +1,16 @@
-var count = 0;
 var mainButton = document.querySelector('.dark-button');
 var background = document.querySelector('.black-bg');
+var lightBulb = true;
+
 function click(event) {
-  count++;
-  if (count % 2 > 0) {
-    mainButton.className = 'light-button';
-    background.className = 'light-bg';
-  } else if (count % 2 === 0) {
-    mainButton.className = 'dark-button';
+  if (lightBulb === true) {
     background.className = 'black-bg';
+    mainButton.className = 'dark-button';
+    lightBulb = false;
+  } else if (lightBulb === false) {
+    background.className = 'light-bg';
+    mainButton.className = 'light-button';
+    lightBulb = true;
   }
 }
 
