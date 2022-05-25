@@ -3,10 +3,10 @@ var modal = document.querySelector('.modal');
 var close = document.querySelector('.modal-button');
 
 function overlay(event) {
-  modal.style.display = 'block';
+  modal.className = 'modal show';
 }
 function exitOverlay(event) {
-  modal.style.display = 'none';
+  modal.className = 'modal hide';
 }
 
 open.addEventListener('click', overlay);
