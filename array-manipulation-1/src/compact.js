@@ -4,19 +4,18 @@
 
 function compact(array) {
   var newArray = [];
-  array.forEach(i => {
-    if (i) {
-      newArray.push(i);
+
+  for (var i = 0; i < array.length; i++) {
+    if (array[i]) {
+      newArray.push(array[i]);
     }
-  });
+  }
   return newArray;
 }
 
 // need to return a new array that filters out
 // falsy values
 // a loop is needed to check for every element in original array
-// is there a way to skip over array element/ not include?
-// using forEach method to test if element is truthy
-// if element of array is truthy then push to newArray
-// if element of array is not truthy then push will not occur
+// if index of array returns as true AKA not a falsy value
+// push that to new array
 // return new array
