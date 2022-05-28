@@ -4,7 +4,7 @@ function firstChars(length, string) {
   return newString;
 }
 
-// must return the first length/# chars of string
+// must return the first length/# of chars of string
 // how can i return only the first part leading up that length
 // use substring method and start at first char
 // then term substring at length
