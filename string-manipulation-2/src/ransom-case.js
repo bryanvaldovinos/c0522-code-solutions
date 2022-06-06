@@ -1,17 +1,16 @@
 /* exported ransomCase */
 function ransomCase(string) {
-  var newString = [];
+  var newString = '';
   for (var i = 0; i < string.length; i++) {
     if (i % 2 === 0) {
       var up = string[i].toLowerCase();
-      newString.push(up);
+      newString += up;
     } else {
       var lo = string[i].toUpperCase();
-      newString.push(lo);
+      newString += lo;
     }
   }
-  var ns = newString.join('');
-  return ns;
+  return newString;
 }
 
 // must return string with every other char CAP
