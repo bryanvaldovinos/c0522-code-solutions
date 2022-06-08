@@ -21,10 +21,7 @@ Bank.prototype.getAccount = function (number) {
   for (var i = 0; i < this.accounts.length; i++) {
     if (this.accounts[i].number === number) {
       return this.accounts[i];
-    } // else if (this.accounts[i].number !== number) {
-    //   return null;
-    // }
-  }
+    }
   return null;
 };
 
