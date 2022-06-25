@@ -76,6 +76,7 @@ function goRight(event) {
   }
 }
 
+setInterval(goRight, 3000);
 cirCont.addEventListener('click', match);
 left.addEventListener('click', goLeft);
 right.addEventListener('click', goRight);
