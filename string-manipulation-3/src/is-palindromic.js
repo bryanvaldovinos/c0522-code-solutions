@@ -13,13 +13,7 @@ function isPalindromic(string) {
       second.push(string[j]);
     }
   }
-  if (first.join() === second.join()) {
-    return true;
-  }
-  if (first.join() !== second.join()) {
-    return false;
-  }
-
+  return (first.join() === second.join());
 }
 
 // have to return t/f if string is same forward as backwards
