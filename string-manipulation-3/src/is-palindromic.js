@@ -21,3 +21,11 @@ function isPalindromic(string) {
   }
 
 }
+
+// have to return t/f if string is same forward as backwards
+// reverse loop to produce values backwards
+// push all values of reg loop to one array
+// push all values of reversed loop to another array
+// arrays w identical values do not equal true
+// will have to use join method to compare
+// return boolean

@@ -24,3 +24,10 @@ function isAnagram(firstString, secondString) {
     return false;
   }
 }
+
+// return t/f if 2nd string is anagram of 1st string
+// will have to push values of strings to seperate arrays
+// from here sort values of arrays alphabetically
+// then draw comparison
+// string the sorted arrays to produce comparison
+// return boolean

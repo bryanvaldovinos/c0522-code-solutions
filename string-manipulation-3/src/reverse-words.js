@@ -20,3 +20,12 @@ function reverseWords(string) {
 
   return stringMod;
 }
+
+// have to a v of string w every character of each word reversed
+// words returned in original order
+// split string into array to work w string and assign to new var
+// run through array and for each element push an empty array
+// to another empty array assigned to new var
+// for each element of array reverse order and push to new empty arr
+// join elements of arrays and push to yet another array
+// then join all those elements to return desired result
