@@ -1,0 +1,123 @@
+    1  git branch es6-template-literals
+    2  git switch es6-template-literals
+    3  git status
+    4  git status
+    5  git add es6-template-literals
+    6  git status
+    7  git commit -m "es6-template-literals complete"
+    8  git push origin es6-template-literals
+    9  git switch main
+   10  git switch object-manipulation-2
+   11  git status
+   12  git switch main
+   13  git switch es6-template-literals
+   14  git switch main
+   15  git switch object-manipulation-2
+   16  git push origin object-manipulation-2
+   17  git switch main
+   18  git branch es6-destructuring
+   19  git switch es6-destructuring
+   20  git status
+   21  git add es6-destructuring
+   22  git status
+   23  git commit -m "es6-destructuring complete"
+   24  git push origin es6-destructuring
+   25  git switch main
+   26  git switch object-manipulation-2
+   27  git switch string-manipulation-3
+   28  git status
+   29  git add string-manipulation-3
+   30  git status
+   31  git commit -m "string-manipulation-3 complete"
+   32  git push origin string-manipulation-3
+   33  git switch main
+   34  git switch es6-destructuring
+   35  git switch main
+   36  git switch main
+   37  git branch es6-arrow-functions
+   38  git switch es6-arrow-functions
+   39  git status
+   40  git add es6-arrow-functions
+   41  git status
+   42  git commit -m "es6-arrow-functions exercise complete"
+   43  git push origin es6-arrow-functions
+   44  git switch main
+   45  git branch command-line-basics
+   46  git switch command-line-basics
+   47  cd command-line-basics
+   48  man man
+   49  man cat
+   50  cat laziness.txt
+   51  cat impatience.txt
+   52  cat hubris.txt
+   53  man cat
+   54  cat laziness.txt impatience.txt hubris.txt
+   55  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+   56  cat three-virtues.txt
+   57  man ls
+   58  ls 
+   59  ls -a
+   60  ls -F
+   61  ls
+   62  ls -a
+   63  ls
+   64  ls -aF
+   65  lfz-staff / ls
+   66  lfz-staff ls
+   67  ls
+   68  man ls
+   69  ls
+   70  ls lfz-staff
+   71  ls -a lfz-staff
+   72  ls -aF lfz-staff
+   73  ls -F lfz-staff
+   74  ls lfz-staff
+   75  ls -aF lfz-staff
+   76  ls -aF lfz-staff > lfz-staff/contents.txt
+   77  cat contents.txt
+   78  cat lfz-staff/contents.txt
+   79  man pwd
+   80  pwd
+   81  pwd > i-was-here.txt
+   82  ls pwd
+   83  ls 
+   84  cat i-was-here.txt
+   85  man echo
+   86  man echo
+   87  echo 'Hello, World!
+man
+echo
+pwd
+git switch command-line-basics
+   88  echo 'Hello, World!'
+   89  echo 'Hello, World!' > hello.txt
+   90  ls
+   91  cat hello.txt
+   92  man touch
+   93  touch tag-youre-it.txt
+   94  touch snoot/boop.txt
+   95  ls snoot
+   96  man mkdir
+   97  mkdir parent
+   98  ls
+   99  mkdir -p parent/child/grandchildren
+  100  ls
+  101  touch parent/child/grandchildren/.gitkeep
+  102  ls -a .gitkeep
+  103  man mv
+  104  man mv
+  105  mv pokiemans pokemon
+  106  ls
+  107  man rm
+  108  rm lol.txt
+  109  ls
+  110  rm -r kill-me/
+  111  ls
+  112  man cp
+  113  man cp
+  114  man cp
+  115  cp and-then.txt no-and-then.txt
+  116  ls
+  117  man history
+  118  history
+  119  history > command-history.txt
