@@ -5,8 +5,8 @@ const input2 = process.argv[4];
 const obj = require('./data.json');
 
 if (command === 'read') {
-  for (var i = 1; i < obj.nextId; i++) {
-    console.log([i].toString() + ':', obj.notes[i]);
+  for (var property in obj.notes) {
+    console.log(`${property}: ${obj.notes[property]}`);
   }
 }
 if (command === 'create') {
