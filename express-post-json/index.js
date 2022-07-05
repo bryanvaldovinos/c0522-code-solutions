@@ -1,24 +1,24 @@
 var express = require('express');
 var app = express();
 let nextId = 1;
-let grades = {};
-const newArray = [];
+const grades = {};
 
 app.get('/api/grades', (req, res) => {
+  const newArray = [];
+  for (const id in grades) {
+    newArray.push(grades[id]);
+  }
   res.json(newArray);
 });
 
 app.use(express.json());
 
 app.post('/api/grades', (req, res) => {
-  grades.name = req.body.name;
-  grades.course = req.body.course;
-  grades.score = req.body.score;
-  grades.id = nextId;
-  res.status(201).send(grades);
-  newArray.push(grades);
-  grades = {};
-  nextId = nextId + 1;
+  const student = req.body;
+  const id = nextId++;
+  student.id = id;
+  grades[id] = student;
+  res.status(201).send(student);
 });
 
 app.listen(3000, err => {
