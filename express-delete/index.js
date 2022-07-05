@@ -29,6 +29,12 @@ for (var property in grades) {
 
 app.get('/api/grades', (req, res) => {
   res.json(newArray);
+
+//  const newArray = [];
+  // for (const id in grades) {
+  //   newArray.push(grades[id]);
+  // }
+  // res.json(newArray);
 });
 
 app.delete('/api/grades/:id', (req, res) => {
@@ -42,6 +48,14 @@ app.delete('/api/grades/:id', (req, res) => {
     newArray.push(grades[prop]);
   }
   res.sendStatus(204);
+
+  // const id = Number(req.params.id);
+  // if (!grades[id]) {
+  //   res.sendStatus(404);
+  // } else {
+  //   delete grades[id];
+  //   res.sendStatus(204);
+  // }
 });
 
 app.listen(3000, err => {
