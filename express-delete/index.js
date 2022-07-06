@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-var newArray = [];
 
 const grades = {
   12: {
@@ -23,39 +22,22 @@ const grades = {
   }
 };
 
-for (var property in grades) {
-  newArray.push(grades[property]);
-}
-
 app.get('/api/grades', (req, res) => {
+  const newArray = [];
+  for (const id in grades) {
+    newArray.push(grades[id]);
+  }
   res.json(newArray);
-
-//  const newArray = [];
-  // for (const id in grades) {
-  //   newArray.push(grades[id]);
-  // }
-  // res.json(newArray);
 });
 
 app.delete('/api/grades/:id', (req, res) => {
-  newArray = [];
-  for (var property in grades) {
-    if (property === req.params.id) {
-      delete grades[property];
-    }
+  const id = Number(req.params.id);
+  if (!grades[id]) {
+    res.sendStatus(404);
+  } else {
+    delete grades[id];
+    res.sendStatus(204);
   }
-  for (var prop in grades) {
-    newArray.push(grades[prop]);
-  }
-  res.sendStatus(204);
-
-  // const id = Number(req.params.id);
-  // if (!grades[id]) {
-  //   res.sendStatus(404);
-  // } else {
-  //   delete grades[id];
-  //   res.sendStatus(204);
-  // }
 });
 
 app.listen(3000, err => {
