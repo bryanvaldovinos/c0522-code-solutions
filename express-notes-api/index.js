@@ -35,18 +35,16 @@ app.get('/api/notes/:id', (req, res) => {
 app.use(express.json());
 
 app.post('/api/notes', (req, res) => {
-  const inputC = req.body;
-  const inputD = Object.keys(inputC)[0];
-  if (inputD === undefined) {
+  const inputC = req.body.content;
+  if (inputC === undefined) {
     const newObj = {
       error: 'content is a required field'
     };
     res.status(400).send(newObj);
-  } else {
-    const cont = inputC.content;
+  } else if (inputC !== undefined) {
     const inputObj = {
       id: data.nextId,
-      content: cont
+      content: inputC
     };
     data.notes[data.nextId] = inputObj;
     data.nextId = data.nextId + 1;
@@ -133,9 +131,6 @@ app.put('/api/notes/:id', (req, res) => {
   }
 });
 
-app.listen(3000, err => {
-  if (err) {
-    console.error(err);
-  }
+app.listen(3000, () => {
   // console.log('Server listening on port 3000!');
 });
