@@ -94,7 +94,7 @@ app.delete('/api/notes/:id', (req, res) => {
 
 app.put('/api/notes/:id', (req, res) => {
   const id = Number(req.params.id);
-  const inputC = Object.keys(req.body)[0];
+  const inputC = req.body.content;
   if (inputC === undefined) {
     const errObj = {
       error: 'content is a required field'
