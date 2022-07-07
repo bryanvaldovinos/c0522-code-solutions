@@ -1,0 +1,45 @@
+.hidden {
+  display: none !important;
+}
+
+.container {
+  width: 1400px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.border {
+  border: 5px solid black;
+}
+
+.col-15 {
+  width: 15%;
+}
+
+.col-70 {
+  width: 70%;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 75%;
+}
+
+.space {
+  justify-content: space-evenly;
+}
+
+.margin-tb {
+  margin: 15px 0;
+}
+
+.margin-rl {
+  margin: 0 10px;
+}
