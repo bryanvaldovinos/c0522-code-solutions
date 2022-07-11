@@ -83,29 +83,14 @@ app.put('/api/grades/:gradeId', (req, res) => {
       returning *
   `;
 
-  const check = `
-    select "gradeId",
-           "name",
-           "course",
-           "score",
-           "createdAt"
-      from "grades"
-  `;
-
-  db.query(check)
-    .then(result => {
-      const grades = result.rows;
-      const verify = obj => obj.gradeId === id;
-      if (!grades.some(verify)) {
-        res.status(404).send({ error: `cannot find grade with id ${id}` });
-      }
-
-    });
-
   db.query(sql, params)
     .then(result => {
       const grades = result.rows;
-      res.status(200).send(grades[0]);
+      if (!grades[0]) {
+        res.status(404).send({ error: `cannot find grade with id ${id}` });
+      } else {
+        res.status(200).send(grades[0]);
+      }
 
     })
     .catch(err => {
@@ -121,24 +106,24 @@ app.delete('/api/grades/:gradeId', (req, res) => {
     return;
   }
 
-  const check = `
-    select "gradeId",
-           "name",
-           "course",
-           "score",
-           "createdAt"
-      from "grades"
-  `;
+  // const check = `
+  //   select "gradeId",
+  //          "name",
+  //          "course",
+  //          "score",
+  //          "createdAt"
+  //     from "grades"
+  // `;
 
-  db.query(check)
-    .then(result => {
-      const grades = result.rows;
-      const verify = obj => obj.gradeId === id;
-      if (!grades.some(verify)) {
-        res.status(404).send({ error: `cannot find grade with id ${id}` });
-      }
+  // db.query(check)
+  //   .then(result => {
+  //     const grades = result.rows;
+  //     const verify = obj => obj.gradeId === id;
+  //     if (!grades.some(verify)) {
+  //       res.status(404).send({ error: `cannot find grade with id ${id}` });
+  //     }
 
-    });
+  //   });
 
   const sql = `
     delete from "grades"
@@ -148,7 +133,12 @@ app.delete('/api/grades/:gradeId', (req, res) => {
   const param = [id];
   db.query(sql, param)
     .then(result => {
-      res.sendStatus(204);
+      const grades = result.rows;
+      if (!grades[0]) {
+        res.status(404).send({ error: `cannot find grade with id ${id}` });
+      } else {
+        res.status(204);
+      }
     })
     .catch(err => {
       console.error(err);
