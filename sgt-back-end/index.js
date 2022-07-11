@@ -80,7 +80,7 @@ app.put('/api/grades/:gradeId', (req, res) => {
           "name" = $2,
           "score" = $3
         where "gradeId" = $4
-      returning *
+      returning *;
   `;
 
   db.query(sql, params)
@@ -103,41 +103,23 @@ app.delete('/api/grades/:gradeId', (req, res) => {
   const id = Number(req.params.gradeId);
   if (isNaN(id) || id <= 0) {
     res.status(400).send({ error: 'gradeId must be a positive integer' });
-    return;
+
   }
-
-  // const check = `
-  //   select "gradeId",
-  //          "name",
-  //          "course",
-  //          "score",
-  //          "createdAt"
-  //     from "grades"
-  // `;
-
-  // db.query(check)
-  //   .then(result => {
-  //     const grades = result.rows;
-  //     const verify = obj => obj.gradeId === id;
-  //     if (!grades.some(verify)) {
-  //       res.status(404).send({ error: `cannot find grade with id ${id}` });
-  //     }
-
-  //   });
 
   const sql = `
     delete from "grades"
       where "gradeId" = $1
+      returning *;
   `;
 
-  const param = [id];
-  db.query(sql, param)
+  const params = [id];
+  db.query(sql, params)
     .then(result => {
       const grades = result.rows;
       if (!grades[0]) {
         res.status(404).send({ error: `cannot find grade with id ${id}` });
       } else {
-        res.status(204);
+        res.sendStatus(204);
       }
     })
     .catch(err => {
