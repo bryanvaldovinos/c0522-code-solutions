@@ -9,7 +9,7 @@ class CustomButton extends React.Component {
 
 const element = (
   <div>
-    <CustomButton text="I" name="chicken"/>
+    <CustomButton text="I"/>
     <CustomButton text="know" />
     <CustomButton text="React!" />
   </div>
