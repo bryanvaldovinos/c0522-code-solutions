@@ -4,22 +4,23 @@ import ReactDOM from 'react-dom/client';
 class CustomButton extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
     this.state = { isClicked: false };
+    this.handleClick = this.handleClick.bind(this);
 
-  }
-
-  render() {
-    if (this.state.isClicked) {
-      return <button onClick={this.state}> {this.props.text2} </button>;
-    } else {
-      return <button onClick={this.handleClick}> {this.props.text1} </button>;
-    }
   }
 
   handleClick() {
     this.setState({ isClicked: true });
   }
+
+  render() {
+    if (this.state.isClicked) {
+      return <button> {this.props.text2} </button>;
+    } else {
+      return <button onClick={this.handleClick}> {this.props.text1} </button>;
+    }
+  }
+
 }
 
 const element = (
