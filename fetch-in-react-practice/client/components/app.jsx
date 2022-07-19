@@ -38,51 +38,31 @@ export default class App extends React.Component {
   }
 
   toggleCompleted(todoId) {
-    // console.log(this.state.todos[0]);
-    // console.log(newObject);
-
-    // console.log(this.state.todos.length);
     var newObject = {};
     // var newId;
     for (var i = 0; i < this.state.todos.length; i++) {
       if (todoId === this.state.todos[i].todoId) {
         newObject.isCompleted = !this.state.todos[i].isCompleted;
+        // console.log(this.state.todos[i]);
         // newId = i;
+        fetch(`/api/todos/${todoId}`,
+          {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(this.state.todos)
+          })
+          .then(res => res.json());
+        // .then(update => {
+        //   const currTodos = [...this.state.todos];
+        //   const we = currTodos.find(element => element.todoId === todoId);
+        //   console.log(we);
+        //   this.setState({
+        //     todos: this.state.todos[todoId].isCompleted
+        //   });
+        //   console.log(this.state.todos[todoId].isCompleted);
+        // });
       }
     }
-
-    fetch(`/api/todos/${todoId}`,
-      {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(this.state.todos)
-      })
-      .then(res => res.json())
-      .then(update => {
-        // console.log('hello');
-      });
-
-    /**
-     * Find the index of the todo with the matching todoId in the state array.
-     * Get its "isCompleted" status.
-     * Make a new object containing ONE PROPERTY: the opposite "isCompleted" status.
-     * Use fetch to send a PATCH request to `/api/todos/${todoId}`
-     * Then 😉, once the response JSON is received and parsed,
-     *   - create a shallow copy of the todos array from state
-     *   - replace the old todo with the todo received from the server
-     *   - replace the old todos in the state with the new one (you know the index).
-     *
-     * NOTE: "toggle" means to flip back and forth, so clicking a todo
-     * in the list repeatedly should "toggle" its isCompleted status back and forth.
-     *
-     * DO NOT try to calculate the index of the todo by subtracting 1 from the id.
-     *
-     * DO NOT MUTATE the original state array, nor any objects within it.
-     * https://reactjs.org/docs/optimizing-performance.html#the-power-of-not-mutating-data
-     *
-     * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
-     * And specify the "Content-Type" header as "application/json"
-     */
   }
 
   render() {
