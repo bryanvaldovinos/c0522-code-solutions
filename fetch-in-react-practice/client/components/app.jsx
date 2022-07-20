@@ -38,28 +38,34 @@ export default class App extends React.Component {
   }
 
   toggleCompleted(todoId) {
+    var newObject = {};
     fetch(`/api/todos/${todoId}`,
       {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(this.state.todos)
+        body: JSON.stringify(newObject)
       })
       .then(update => {
-        var newObject = {};
-        // var newId;
+        var newId;
         const currTodos = [...this.state.todos];
-        // const we = currTodos.find(element => element.todoId === todoId);
-        // console.log(we);
         for (var i = 0; i < this.state.todos.length; i++) {
           if (todoId === currTodos[i].todoId) {
-            newObject.isCompleted = !this.state.todos[i].isCompleted;
-            // newId = i;
+            // newObject.isCompleted = !this.state.todos[i].isCompleted;
+            newId = i;
           }
         }
-        // ***** you're very close --- have to chuck in opposite isCompleted to currTodos then assign to todos in this.setState;
-        // this.setState({
-        //   todos:
-        // });
+        const we = currTodos.find(element => {
+          if (element.todoId === todoId) {
+            element.isCompleted = !this.state.todos[newId].isCompleted;
+          }
+          return element.isCompleted;
+        });
+        newObject = we;
+        // console.log(we);
+        // console.log(newObject);
+        this.setState({
+          todos: currTodos
+        });
         // console.log(currTodos);
         // console.log(this.state.todos[newId].todoId);
         // console.log(!this.state.todos[newId].isCompleted);
