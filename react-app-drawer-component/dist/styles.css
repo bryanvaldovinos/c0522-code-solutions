@@ -1,0 +1,72 @@
+i {
+  position: absolute;
+  font-size: 3rem;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+h4:hover {
+  color: orange;
+  font-size: 1.25rem;
+  transition: 0.5s;
+}
+
+.hidden {
+  display: none;
+}
+
+.row {
+  display: flex;
+}
+
+.sidediv {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: rgb(128 128 128 / 75%);
+}
+
+.sidediv:hover {
+  cursor: pointer;
+}
+
+.sidebar {
+  z-index: 1;
+  background-color: white;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  padding: 2rem;
+  width: 200px;
+  height: 100vh;
+  text-align: right;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+.col-80 {
+  width: 80%;
+}
+
+.col-20 {
+  width: 20%;
+}
+
+.col-10 {
+  width: 10%;
+}
+
+.fit {
+  object-fit: contain;
+}
+
+img {
+  width: 100%;
+}
