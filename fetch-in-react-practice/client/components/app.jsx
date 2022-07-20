@@ -38,31 +38,33 @@ export default class App extends React.Component {
   }
 
   toggleCompleted(todoId) {
-    var newObject = {};
-    // var newId;
-    for (var i = 0; i < this.state.todos.length; i++) {
-      if (todoId === this.state.todos[i].todoId) {
-        newObject.isCompleted = !this.state.todos[i].isCompleted;
-        // console.log(this.state.todos[i]);
-        // newId = i;
-        fetch(`/api/todos/${todoId}`,
-          {
-            method: 'PATCH',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(this.state.todos)
-          })
-          .then(res => res.json());
-        // .then(update => {
-        //   const currTodos = [...this.state.todos];
-        //   const we = currTodos.find(element => element.todoId === todoId);
-        //   console.log(we);
-        //   this.setState({
-        //     todos: this.state.todos[todoId].isCompleted
-        //   });
-        //   console.log(this.state.todos[todoId].isCompleted);
+    fetch(`/api/todos/${todoId}`,
+      {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(this.state.todos)
+      })
+      .then(update => {
+        var newObject = {};
+        // var newId;
+        const currTodos = [...this.state.todos];
+        // const we = currTodos.find(element => element.todoId === todoId);
+        // console.log(we);
+        for (var i = 0; i < this.state.todos.length; i++) {
+          if (todoId === currTodos[i].todoId) {
+            newObject.isCompleted = !this.state.todos[i].isCompleted;
+            // newId = i;
+          }
+        }
+        // ***** you're very close --- have to chuck in opposite isCompleted to currTodos then assign to todos in this.setState;
+        // this.setState({
+        //   todos:
         // });
-      }
-    }
+        // console.log(currTodos);
+        // console.log(this.state.todos[newId].todoId);
+        // console.log(!this.state.todos[newId].isCompleted);
+      });
+    // .catch(err => console.log(err));
   }
 
   render() {
