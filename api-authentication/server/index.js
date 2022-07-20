@@ -81,7 +81,8 @@ app.post('/api/auth/sign-in', (req, res, next) => {
           })
           .catch(err => next(err));
       }
-    });
+    })
+    .catch(err => next(err));
 });
 
 app.use(errorMiddleware);
