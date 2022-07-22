@@ -1,0 +1,98 @@
+User can sign up.
+
+Upon clicking on the Sign Up anchor tag, the route of the state is updated by the
+componentDidMount function whose window listens for a hashchange - in this instance,
+href(#sign-up) of the anchor tag updates the route of state. A rerender of the page
+occurs when the path AKA the route of state is changed to 'sign-up', ultimately
+returning the AuthPage component from auth.jsx. The render method of the AuthPage
+component then checks the route.path to see if the state is 'sign in', in our case,
+that state is not 'sign in', so the returned react element includes a welcomeMessage
+with 'Create an account to get started!' as its text. Additionally, within the returned
+react element the AuthForm class component of the auth-form.jsx file has its render
+method called as the action is now equal to 'sign-up' the text for both the anchor
+tag and button are changed to 'Sign in instead' and 'Register'. Two event listeners
+are listening as props to both the username and password input, as a change occurs
+- the username and password properties of the state are updated. The event listeners
+call a handleChange function that deconstructs name and its value of the event.target
+and updates the state of username and password accordingly.
+
+Now, when the client hits the Register button, the form listens on the submit triggering
+the handleSubmit function to fire. At this point, fetch is used to send a post request to
+'/api/auth/sign-up' and IF a username and password are supplied, returns the client to the
+sign in page along with an object containing the state. The password is hashed using Argon2,
+then database side - both the hashed password and the username are stored in a array that is
+then assigned to a const variable named params. The parameterized values are now inserted
+into the database using  proper SQL syntax and assigned to a const variable as a template
+string. A query of the database is run, with two variables as its parameters, the one holding
+the template string and the other being the params variable. A successful 201 is returned with
+an object containing result.rows. In the case a username and/or password are not supplied by
+the client then a ClientError with 400 and text 'username and password are required fields'
+will be returned instead, the rendered page and input for either input will also notify the
+field is required due to the required prop inside both input elements. No password is hashed
+or inserted into database, no username is inserted into database.
+
+
+User can sign in.
+
+As a result of the client clicking the Submit/Register button on the previously rendered state,
+the handleSubmit function was called to fetch. The second promise to that fetch, contains a
+condition where IF the action  is equal to 'sign-up', assign 'sign-in' to window.location.hash.
+This then changes the state, the renderPage function of the App class component is called to
+return the AuthPage class component. A rerender of the page occurs that depending on the path
+- updates the welcomeMessage and prop values of AuthForm. In the AuthForm class component, the
+render function is again called as const variable action is now equal to 'sign-in', which in
+return, updates the text content for both the anchor tag and the submit button. As the client
+begins to sign in using the username and password inputs, the inputs are listening to changes
+that call upon the handleChange function to deconstruct the name and value of the given input
+and update state as needed.
+
+Upon clicking on the 'Log In' button, the forms onSubmit listener calls upon the handleSubmit
+function where a fetch is made to '/api/auth/${action}'. If either a username or a password is
+missing, the server will return a 401 error with a string of 'invalid login'. Nothing will be
+rerendered. However, if both username and password are provided, the username is placed inside
+an array and assigned to const variable named params. A template string that includes proper SQL
+syntax to select a userId and hashedPassword is assigned to const variable sql. The database is
+now queried with sql and params as parameters. A promise is made to return an object holding the
+queried search, result.rows is assigned to a const variable user. In order for the promise to
+return the desired data, a conditional must first check to see IF the user is present, otherwise
+a 401 error is returned with string 'invalid login'. If user is present, then the userId and
+hashedPassword of the user is deconstructed and assigned to a const variable. Argon2 is returned,
+the verify method does a check on the password provided and hashedPassword, then a conditional
+is set where if the password does not match a 401 error with string 'invalid login' is returned.
+When returning this error, the errorMiddleWare function is called to return the appropriate
+error status and object. In the case the password does match, deconstructed userId and username
+is assigned to a new const variable payload. The sign method of jwt object is called with
+two parameters, the payload variable and the appropriate token, this is then assigned to a
+new variable which is passed as the first property, along with user and its value set to
+payload of an object that is returned then sent to the client. In case another error occurs,
+a catch is placed below the previous promise to return an error.
+
+The handleSubmit functions second promise of its fetch also passed the result, triggering
+the onSignIn listener for AuthForms prop. This then called on the handleSignIn function which
+passed the result as its parameter. Deconstructing the user and token from the result and
+assigning it to a new const variable. A string and the token are then set to localStorage
+of the window object and state of user is also updated. setState then re-renders the page
+of user now being truthy. Because it is now truthy, render for AuthPage class component will
+return the <Redirect /> class component which will update the hash. The render function renders
+the NavBar and the PageContainer which then calls upon the renderPage function. Because of the
+window hashchange listener the renderPage function now returns the <Home /> class component.
+
+
+User can stay signed in (even if they refresh the page).
+
+
+Within the Home class component a new page is rendered that returns a div element and its giphy.
+When refreshing the page, so long as the user property of state is truthy the container will
+run the renderPage function which will in return render the div element and its giphy again.
+
+
+User can sign out.
+
+Upon the client clicking on the nav bar sign out button, its onClick event listener will
+trigger the handleSignOut function of the App class component. The token previously stored
+in localStorage will be removed and user property of the state will be reset to null. This
+will cause a rerender of the application that will run the render function which will then
+render home again but will return the client to the Redirect class component with the to
+property set to sign in. This will call the componentDidMount function as the hash has now
+changed. The route property of the state method will be updated to reflect the current hash
+and cause the app to rerender once more.
