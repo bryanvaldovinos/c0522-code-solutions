@@ -3,48 +3,63 @@ var pic = document.querySelectorAll('img');
 var dot = document.querySelectorAll('.fa-circle');
 var right = document.querySelector('#goright');
 var left = document.querySelector('#goleft');
-var currID = setInterval(rotate, 1000);
+var currID = setInterval(rotate, 1500);
 
 function rotate() {
+  index++;
   if (index > 3) {
     index = 0;
-    pic[3].className = 'hidden';
-    dot[3].className = 'far fa-circle margin-rl';
   }
-  pic[index].className = '';
-  dot[index].className = 'fas fa-circle margin-rl';
-  if (index > 0) {
-    pic[index - 1].className = 'hidden';
-    dot[index - 1].className = 'far fa-circle margin-rl';
+  update();
+}
+
+function goRight(event) {
+  if (index === 3) {
+    index = 0;
+  } else {
+    index++;
   }
-  index++;
+  update();
+}
+
+function goLeft(event) {
+  if (index === 0) {
+    index = 3;
+  } else {
+    index--;
+  }
+  update();
 }
 
 function update() {
   clearInterval(currID);
-  for (var i = 0; i < pic.length; i++) {
-    var picDex = Number(pic[i].dataset.index);
-    if (picDex === index) {
-      pic[index].className = '';
-      dot[index].className = 'fas fa-circle margin-rl';
-    } else if (picDex !== index) {
-      pic[index].className = 'hidden';
-      dot[index].className = 'far fa-circle margin-rl';
+  for (var h = 0; h < dot.length; h++) {
+    var dotIndex = Number(dot[h].dataset.index);
+    if (dotIndex === index) {
+      dot[h].setAttribute('class', 'fas fa-circle margin-rl');
+    } else {
+      dot[h].setAttribute('class', 'far fa-circle margin-rl');
     }
   }
-
-  // for (var j = 0; j < dot.length; j++) {
-
-  // }
-  rotate();
+  for (var i = 0; i < pic.length; i++) {
+    var picIndex = Number(pic[i].dataset.index);
+    if (picIndex === index) {
+      pic[i].setAttribute('class', '');
+    } else {
+      pic[i].setAttribute('class', 'hidden');
+    }
+  }
+  currID = setInterval(rotate, 1500);
 }
 
-function goRight() {
-  index++;
+function dotClick(event) {
+  var dotIndex = event.target.dataset.index;
+  index = Number(dotIndex);
   update();
 }
 
-function goLeft() {
+for (var i = 0; i < dot.length; i++) {
+  dot[i].addEventListener('click', dotClick);
 }
 
 right.addEventListener('click', goRight);
