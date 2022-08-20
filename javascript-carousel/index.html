@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Carousel</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="containter">
+
+    <div class="row center">
+      <div class="column">
+        <div class="row center border">
+          <div class="col-15">
+            <div class="row center">
+              <i class="fas fa-chevron-left" id="goleft"></i>
+            </div>
+          </div>
+          <div class="col-70">
+            <div class="img-container row center">
+              <img src="images/001.png" class="" data-index="0">
+              <img src="images/004.png" class="hidden" data-index="1">
+              <img src="images/007.png" class="hidden" data-index="2">
+              <img src="images/025.png" class="hidden" data-index="3">
+            </div>
+            <div class="row center margin-tb">
+              <div class="circle-container">
+                <i class="fas fa-circle margin-rl" data-index="0"></i>
+                <i class="far fa-circle margin-rl" data-index="1"></i>
+                <i class="far fa-circle margin-rl" data-index="2"></i>
+                <i class="far fa-circle margin-rl" data-index="3"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-15">
+            <div class="row center">
+              <i class="fas fa-chevron-right" id="goright"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
