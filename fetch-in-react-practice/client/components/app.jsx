@@ -38,39 +38,31 @@ export default class App extends React.Component {
   }
 
   toggleCompleted(todoId) {
-    var newObject = {};
+    const toggle = this.state.todos.find(element => {
+      return (element.todoId === todoId);
+    });
+    const newObject = { isCompleted: !toggle.isCompleted };
     fetch(`/api/todos/${todoId}`,
       {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newObject)
       })
+      .then(res => res.json())
       .then(update => {
-        var newId;
         const currTodos = [...this.state.todos];
-        for (var i = 0; i < this.state.todos.length; i++) {
-          if (todoId === currTodos[i].todoId) {
-            // newObject.isCompleted = !this.state.todos[i].isCompleted;
-            newId = i;
+        var newI;
+        for (var i = 0; i < currTodos.length; i++) {
+          if (currTodos[i].todoId === todoId) {
+            newI = i;
           }
         }
-        const we = currTodos.find(element => {
-          if (element.todoId === todoId) {
-            element.isCompleted = !this.state.todos[newId].isCompleted;
-          }
-          return element.isCompleted;
-        });
-        newObject = we;
-        // console.log(we);
-        // console.log(newObject);
+        currTodos[newI] = update;
         this.setState({
           todos: currTodos
         });
-        // console.log(currTodos);
-        // console.log(this.state.todos[newId].todoId);
-        // console.log(!this.state.todos[newId].isCompleted);
-      });
-    // .catch(err => console.log(err));
+      })
+      .catch(err => (err));
   }
 
   render() {
